@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, shape } from '../styles';
+import { color } from '../styles';
 
 const StyledContainer = styled.div`
 	padding: 2rem;
