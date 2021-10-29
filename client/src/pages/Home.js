@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import ProductList from "../components/ProductList";
+import CategoryMenu from "../components/CategoryMenu";
+import Cart from '../components/Cart';
+import { Container } from 'semantic-ui-react';
 
-import { Container } from "../components/Container";
-import { H2 } from '../components/Text';
+// Before being managed globally
+// const Home = () => {
+//   const [currentCategory, setCategory] = useState("");
 
+//   before being managed globally
+//   return (
+//     <div className="container">
+//       <CategoryMenu setCategory={setCategory} />
+//       <ProductList currentCategory={currentCategory} />
+//     </div>
+//   );
+
+ 
+// };
+
+ // after being managed globally
 const Home = () => {
   return (
-    <Container alignContent="center">
-      <H2>Hello world</H2>
+    <Container className="flex-row space-around ">
+
+      <CategoryMenu class="my-2" />
+
+      <ProductList class="column"/>
+    
+      <Cart />
     </Container>
   );
 };
