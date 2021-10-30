@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
+import { SEARCH_PRODUCTS, UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_CATEGORIES } from "../../utils/queries";
-import { Button } from 'semantic-ui-react';
+import  SearchItem from '../SearchItem';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -62,6 +62,8 @@ function CategoryMenu({}) {
     
   };
 
+ 
+
   // on click before global state was setCategory(item._id);
   // now is handleClick(item._id);
 
@@ -78,7 +80,13 @@ function CategoryMenu({}) {
           {item.name}
         </button>
       ))}
+   
+   {/* <SearchItem /> */}
     </div>
+  
+   
+  
+        
   );
 }
 

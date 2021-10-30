@@ -4,6 +4,7 @@
 // actions to take
 import {
   UPDATE_PRODUCTS,
+  SEARCH_PRODUCTS,
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
   ADD_TO_CART,
@@ -30,6 +31,15 @@ const defaultState = {
             ...state,
             products: [...action.products]
             };
+        // if action type value is the value of `UPDATE_PRODUCTS`, return a new state object with an updated products array
+
+        case SEARCH_PRODUCTS:
+          let searchState = state.cart.filter(product => {
+            return product.name.includes(action.searchtext)
+          });
+          return {
+          ...searchState,
+          };            
         // if action type value is the value of `UPDATE_CATEGORIES`, return a new state object with an updated categories array
         case UPDATE_CATEGORIES:
             return {

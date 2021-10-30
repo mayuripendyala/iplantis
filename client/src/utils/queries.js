@@ -68,3 +68,22 @@ export const QUERY_CHECKOUT = gql`
     }
   }
 `;
+
+
+
+export const QUERY_PRODUCTS_NAME = gql`
+query getProductsByName($name: String) {
+  products(name: $name) {
+    _id
+    name
+    description
+    price
+    quantity
+    image
+    category {
+      _id
+    }
+  }
+}
+
+`;
