@@ -1,12 +1,6 @@
 const mongoose = require('mongoose');
 
-require('dotenv').config()
-
-const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/iplantis'
-
-console.log('DB URI', dbURI)
-
-mongoose.connect(dbURI, {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/iplantis2', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,

@@ -25,7 +25,6 @@ const Home = () => {
     <Container className="flex-row space-around ">
 
       <CategoryMenu class="my-2" />
-
       <ProductList class="column"/>
     
       <Cart />

@@ -34,6 +34,7 @@ function Nav() {
               Login
             </Link>
           </li>
+         
         </ul>
       );
     }
@@ -43,7 +44,7 @@ function Nav() {
     <header className="flex-row px-1">
       <h1 className="center">
         <Link to="/">
-          <span role="img" aria-label="plants">🪴 Iplantis</span>
+          <p>🪴 Iplantis</p>
           
         </Link>
       </h1>
