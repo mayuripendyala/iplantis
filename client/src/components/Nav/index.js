@@ -44,7 +44,7 @@ function Nav() {
     <header className="flex-row px-1">
       <h1 className="center">
         <Link to="/">
-          <p>🪴 Iplantis</p>
+          <h2>🪴 Iplantis</h2>
           
         </Link>
       </h1>

@@ -22,7 +22,7 @@ import { Container } from 'semantic-ui-react';
  // after being managed globally
 const Home = () => {
   return (
-    <Container className="flex-row space-around ">
+    <Container class="flex-row space-around">
 
       <CategoryMenu class="my-2" />
       <ProductList class="column"/>
