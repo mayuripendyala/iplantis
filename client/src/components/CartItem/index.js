@@ -8,14 +8,6 @@ import { idbPromise } from "../../utils/helpers";
 const CartItem = ({ item }) => {
 
 
-      /*
-    Note that we only destructured the dispatch() 
-    function from the useStoreContext Hook,
-    because the CartItem component has no 
-    need to read state. 
-    */
-    // commented out in favor of redux logic  
-    //const [, dispatch] = useStoreContext();
     const state = useSelector((state) => {
       return state
     });

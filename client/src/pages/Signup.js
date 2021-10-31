@@ -7,7 +7,7 @@ import { ADD_USER } from "../utils/mutations";
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: '', password: '',firstName:'', lastName:'',address:''});
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async event => {
@@ -15,7 +15,7 @@ function Signup(props) {
     const mutationResponse = await addUser({
       variables: {
         email: formState.email, password: formState.password,
-        firstName: formState.firstName, lastName: formState.lastName
+        firstName: formState.firstName, lastName: formState.lastName,address :formState.address
       }
     });
     const token = mutationResponse.data.addUser.token;
@@ -96,6 +96,7 @@ function Signup(props) {
       <Segment stacked>
         <Form.Input fluid icon='user' iconPosition='left' type='firstName' id="firstName" name="firstName" placeholder='First Name' onChange={handleChange} />
         <Form.Input fluid icon='user' iconPosition='left' type='lastName' id="lastName" name="lastName" placeholder='Last Name' onChange={handleChange} />
+        <Form.Input fluid icon='user' iconPosition='left' type='address' id="address" name="address" placeholder='Address' onChange={handleChange} />
         <Form.Input fluid icon='user' iconPosition='left' type='email' id="email" name="email" placeholder='E-mail address' onChange={handleChange} />
         <Form.Input
           fluid
@@ -112,9 +113,7 @@ function Signup(props) {
         </Button>
       </Segment>
     </Form>
-    <Message>
-      New to us? <Link to="/signup">Sign Up</Link>
-    </Message>
+    
   </Grid.Column>
 </Grid>
   );

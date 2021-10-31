@@ -4,15 +4,14 @@ import { idbPromise } from "../../utils/helpers";
 import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import './style.css';
-//commented out in favor of redux logic
-//import { useStoreContext } from '../../utils/GlobalState';
+
 import { useDispatch, useSelector } from 'react-redux';
 // stripe checkout api
 // to be used as part of the button checkout process
 import { loadStripe } from "@stripe/stripe-js";
 import { useLazyQuery } from '@apollo/react-hooks';
 import { QUERY_CHECKOUT } from "../../utils/queries"
-import ButtonCartIconShorthand from '../ButtonCart'
+
 
 
 
@@ -20,16 +19,6 @@ import ButtonCartIconShorthand from '../ButtonCart'
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
-
-  /*
-  You'll use the custom useStoreContext Hook to establish 
-  a state variable and the dispatch() function to update
-  the state. In this case, dispatch() will call the TOGGLE_CART
-  action. In the Cart functional component, write the following code:
-  */
-
-  // Commented out in favor of redux logic
-  //const [state, dispatch] = useStoreContext();
 
   const state = useSelector((state) => {
     return state
@@ -75,19 +64,7 @@ const Cart = () => {
     return sum.toFixed(2);
   }
 
-    // jsx component befor
-    //<div className="close">[close]</div>
-    // after <div className="close" onClick={toggleCart}>[close]</div>
-
-    /*we call the action and the resolver will give return 
-            case TOGGLE_CART:
-    return {
-      ...state,
-      cartOpen: !state.cartOpen
-    };
-    */
-   // at this poit state.cartOpen is !state.cartOpen
-
+   
    // call our QUERY_CHECKOUT query
        // handle stripe checkout
        function submitCheckout() {
@@ -107,10 +84,9 @@ const Cart = () => {
     if (!state.cartOpen) {
       return (
         <div className="cart-closed" onClick={toggleCart}>
-          {/* <span
+          <span
             role="img"
-            aria-label="trash">🛒</span> */}
-            <button class="ui icon button"><i class="icon-cart"></i></button>
+            aria-label="trash">🛒</span>
         </div>
       );
     }
